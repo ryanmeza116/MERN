@@ -5,7 +5,7 @@ const Person = (props) => {
         // will group jsx
         // parent component required
         <div>
-            <h2>I am a Person! </h2>
+            <h2>Hello my name is { props.firstName } { props.lastName }</h2>
         </div>
     )
 }
