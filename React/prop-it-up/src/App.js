@@ -5,19 +5,19 @@ function App() {
     <div className="App">
       <People 
       lastName = {'Doe'} firstName = {'Jane'}
-      age = {"45"} 
+      age = {45} 
       hairColor = {"Black"}/>
       <People 
       lastName = {'Smith'} firstName = {'John'}
-      age = {"88"} 
+      age = {88} 
       hairColor = {"Brown"}/>
       <People 
       lastName = {'Fillmore'} firstName = {'Millard'}
-      age = {"50"} 
+      age = {50} 
       hairColor = {"Brown"}/>
       <People 
       lastName = {'Smith'} firstName = {'Maria'}
-      age = {"62"} 
+      age = {62} 
       hairColor = {"Brown"}/>
 
 
