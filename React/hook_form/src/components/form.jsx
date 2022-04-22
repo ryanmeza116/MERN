@@ -56,7 +56,12 @@ return (
                 <input 
                 type = "text"
                 name = "email"
-                onChange = { (e) => setEmail (e.target.value)}
+                onChange = { (e) =>{ setEmail (e.target.value)
+                console.log(e.target.value)
+                }}
+                
+                
+                
                 />
             </div>
             {email.length < 5 ? (
