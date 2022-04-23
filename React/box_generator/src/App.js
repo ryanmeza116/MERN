@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Form from './components/Form';
+import Box from './components/Box';
+import { useState } from 'react'
 
 function App() {
+  const [boxArray, setBoxArray] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form boxArray = {boxArray} setBoxArray = {setBoxArray} />
+      <div className = "container">
+      {boxArray.map((color,index) =>{
+        return (
+          <Box 
+          key = {index}
+          color = {color}
+          index = {index}
+          boxArray = {boxArray}
+          setBoxArray = {setBoxArray}
+          />
+        );
+      })}
+    </div>
     </div>
   );
 }
