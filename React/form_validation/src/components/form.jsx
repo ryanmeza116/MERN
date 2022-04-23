@@ -111,8 +111,8 @@ export default () => {
 return (
 <div>
             <h1>{
-            JSON.stringify(state)}
-            </h1> {/* display current value of state */}
+            JSON.stringify(state)} 
+            </h1>
 
 
             {/* {state.hasBeenSubmitted <font color="#f92672">?</font>   */}
@@ -122,7 +122,7 @@ return (
                     <label htmlFor="name">Email</label>
                     <input
                         id="name"
-                        value={state.email}
+                        value={state.email.value}
                         onChange={(e) => handleEmailChange(e)}
                     />
                 </div>
@@ -130,8 +130,8 @@ return (
                     <label htmlFor="password">Password</label>
                     <input
                         id="password"
-                        value={state.password}
-                        onChange= {handlePasswordChange} 
+                        value={state.password.value}
+                        onChange= {(e) => handlePasswordChange(e)} 
                     />
                 </div>
             </form>
