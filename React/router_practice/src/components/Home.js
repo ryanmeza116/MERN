@@ -1,15 +1,11 @@
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 
 const Home = (props) => {
-return (
-    <div>
-        <h1 style = {{color: 'blue'}}>
-            Home Component
-        </h1>
-        <Link to = {'/about'}>Go to about</Link>
-        {/* Links are Reacts version of "A tags" */}
-    </div>
-)
+    return (
+        <div>
+            <h1>Welcome Home! </h1>
+        </div>
+    )
 }
 
 export default Home;
