@@ -28,6 +28,7 @@ address: {
 
 app.get("/api/users/new", (req, res) => {
 const newUser = generateUserObj();
+console.log(newUser);
 res.json(newUser);
 });
 
@@ -47,3 +48,7 @@ res.json(responseObject);
 });
 
 app.listen(port, () => console.log(`express server running on port ${port}`));
+
+// const faker = require("faker");
+
+// console.log(faker.datetype.uuid());
