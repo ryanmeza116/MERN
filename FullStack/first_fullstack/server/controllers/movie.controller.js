@@ -38,7 +38,7 @@ module.exports = {
         });
     },
     updateMovieById : (req,res) => {
-        Movie.updateOne ({_id:req.params.id}, req.body, {new : true, runValidators: true}) // why dont i have a ; here
+        Movie.findByIdAndUpdate (req.params.id, req.body, {new : true, runValidators: true}) // why dont i have a ; here
         .then((movie) => {
             res.json(movie);
         }) // why not ; 
