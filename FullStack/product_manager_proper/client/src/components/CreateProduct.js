@@ -30,6 +30,8 @@ axios.post("http://localhost:8000/api/products",{
 .catch((err)=>{
     console.log(err);
 })
+
+
 }
 
 return (

@@ -1,6 +1,7 @@
 import './App.css';
 import OneProduct from './components/OneProduct';
 import Main from './views/Main'
+import UpdateProduct from './components/UpdateProduct';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 
@@ -15,6 +16,7 @@ function App() {
     <Routes>
       {/* <Routes path = '/' element = {<CreateProduct />}  /> */}
       <Route path = '/' element = {<Main />} />
+      <Route path = '/product/edit/:id' element = {<UpdateProduct />} /> 
       <Route path = '/product/:id' element = {<OneProduct />} /> 
       {/* id in url doesnt have to match backend specification, only needs to be consistent on Front End */}
       {/* Two elements cannot be displayed at same pathway -- which is why view is necessary */}
