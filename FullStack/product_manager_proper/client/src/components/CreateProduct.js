@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const CreateProduct = (props) => {
+    const {productList,setProductList} = props; 
 
 
 const [title, setTitle] = useState("");
@@ -22,6 +23,7 @@ axios.post("http://localhost:8000/api/products",{
 .then((res)=>{
     console.log(`The post response is : ${res}`);
     console.log(`The pose response's data is ${res.data}`);
+    setProductList([...productList, res.data]);
     //upon a successful post request, we will setState back to "", which will clear out our form
     setTitle("");
     setPrice("");
