@@ -6,21 +6,37 @@ import { Link } from 'react-router-dom';
 function MovieList() {
     const [movies, setMovies] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:8000/api/movies') .then((res) => {
+        axios
+        .get('http://localhost:8000/api/movies') 
+        .then((res) => {
             setMovies(res.data);
         })
         .catch ((err) => {
             console.log("Error in Get All", err)
         });
     }, []); // the empty array prevents useEffect from running all day
-return (
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return (
     <div>
-        {movies.map(movie => (
-            <div key = {movie.id}>
+        {movies.map((movie) => (
+            <div key = {movie._id}>
                 <h2>{movie.title}</h2>
                 <img src = {movie.boxArt} alt = "" />
                 <br />
-                <Link to={`/movie/${movie.id}`}></Link>
+                <Link to={`/movie/${movie._id}`}>Details</Link>
             </div>
         ))
             

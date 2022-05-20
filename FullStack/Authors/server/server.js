@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors')
-require('./config/mongoose.config');
+require('./config/mongoose.config')
 
 const app = express();
 const PORT = 8000; 
@@ -14,7 +14,7 @@ app.use (
     }),
 );
 // frontend orgin -- allows frontend to communicate with backend
-require('./routes/author.routes')(app);
+require('./routes/authors.routes')(app);
 app.listen(PORT, () => {
     console.log(`Server is up and running on ${PORT}`);
 });
