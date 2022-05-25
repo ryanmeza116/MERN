@@ -7,6 +7,7 @@ class BankAccount {
 
     makeDeposit(amount){
         this.balance += amount;
+        console.log(this.balance)
         return this;
     }
     makeWithdrawal(amount){
@@ -42,9 +43,19 @@ class BankAccount {
         
 }
 
-let ryan = new BankAccount(0.05, 100);
+class User {
+    constructor(name, email){
+        this.name = name;
+        this.email = email;
+        this.account = new BankAccount(intRate = 0.02, balance = 0);
+    }
+    depositToAccount(amount){
+        this.account.makeDeposit(amount)
+    }
+}
 
-ryan.makeDeposit(500).makeDeposit(20).makeDeposit(100).makeWithdrawal(500).yieldInterest();
+let ryan = new User("Ryan Meza", "ryanmeza116@gmail.com");
 
-let Abby = new BankAccount(0.05, 100);
-Abby.makeDeposit(2000).makeDeposit(200).makeWithdrawal(400).makeWithdrawal(200).makeWithdrawal(300).makeWithdrawal(200).yieldInterest();
+ryan.depositToAccount(500);
+
+
