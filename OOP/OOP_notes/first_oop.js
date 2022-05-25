@@ -40,6 +40,7 @@ const monty = new User("Monty Python", "monty@python.com");
 guido.makeDeposit(120);
 guido.makeDeposit(500);
 guido.makeWithdrawal(5000);
+
 monty.makeDeposit(1000);
 monty.displayBalance();
 monty.transferMoney(guido, 500);
