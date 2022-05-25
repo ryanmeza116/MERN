@@ -8,6 +8,7 @@ class User {
 
     makeDeposit(amount){
         this.accountBalance += amount;
+        return this;
     }
     makeWithdrawal(amount){
         if(amount > this.accountBalance){
@@ -16,9 +17,11 @@ class User {
         }
         else 
         this.accountBalance -= amount;
+        return this;
     }
     displayBalance(){
         console.log(`Account balance for ${this.name} : $${this.accountBalance}`);
+        return this;
     }
     transferMoney(otherUser, amount){
         if(this.accountBalance < amount){
@@ -29,7 +32,7 @@ class User {
         this.accountBalance -= amount;
         otherUser.accountBalance += amount;
         console.log(`Transferred ${amount} from ${this.name} to ${otherUser.name}. ${otherUser.name} now has $${otherUser.accountBalance}` )
-
+        return this;
     }
 }
 const guido = new User("Guido Van Russum", "guido@python.com");
@@ -37,13 +40,11 @@ const monty = new User("Monty Python", "monty@python.com");
 
 
 
-guido.makeDeposit(120);
-guido.makeDeposit(500);
-guido.makeWithdrawal(5000);
+guido.makeDeposit(120).makeDeposit(500).makeWithdrawal(5000);
 
-monty.makeDeposit(1000);
-monty.displayBalance();
-monty.transferMoney(guido, 500);
+
+monty.makeDeposit(1000).displayBalance().transferMoney(guido, 500);
+
 
 
 
